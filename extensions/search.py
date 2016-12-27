@@ -7,7 +7,6 @@ import google
 async def cmd_google(msg, *search_args):
     search_string = " ".join(search_args)
     results = list(google.search(search_string, stop=5))[:5]
-    print(results)
     await bot.api.send_message(msg.server, "\n".join(results), embed=Embed())
 
 
