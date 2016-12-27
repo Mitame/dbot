@@ -70,6 +70,21 @@ async def cmd_enable_extension(msg, ext_name):
             "Extension enable failed. Check your logs."
         )
 
+@bot.command("disable")
+async def cmd_enable_extension(msg, ext_name):
+    """
+    Disable a loaded extension
+    Syntax:
+        `{command_tag}disable <extension name>`
+    """
+    if bot.enable_extension(ext_name):
+        await bot.api.send_message(msg.server, "Extension successfully disabled.")
+    else:
+        await bot.api.send_message(
+            msg.server,
+            "Extension disable failed. Check your logs."
+        )
+
 class ExtInfo(BaseExtInfo):
     name = "util"
     short = "Basic utilities"

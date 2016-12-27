@@ -150,6 +150,8 @@ class Bot():
                 for func in value:
                     self.commands[key].remove(func)
 
+        return not ext["is_enabled"]
+
     def reload_extension(self, ext_name):
         ext = self.extensions[ext_name]
         was_enabled = ext["is_enabled"]
